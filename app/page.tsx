@@ -14,10 +14,10 @@ export default function Home() {
             frontImage: "/cards/dadbod.avif",
             backImage: "/cards/card-back.png",
           },
-          // {
-          //   frontImage: "/cards/wossumnomicron-scaled.avif",
-          //   backImage: "/cards/card-back.png",
-          // },
+          {
+            frontImage: "/cards/wossumnomicron-scaled.avif",
+            backImage: "/cards/card-back.png",
+          },
         ]}
       />
     </div>

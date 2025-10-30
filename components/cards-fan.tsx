@@ -16,7 +16,7 @@ export interface CardsFanProps {
 
 // Calculate position and rotation for a card in the fan
 function getCardFanPositions(index: number, total: number) {
-  const fanAngle = 45; // degrees total spread
+  const fanAngle = 65; // degrees total spread
   const fanRadius = 0.5; // distance from pivot to card center
   const offset = (index - (total - 1) / 2) / (total > 1 ? total - 1 : 1);
 

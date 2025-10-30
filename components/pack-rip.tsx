@@ -155,6 +155,7 @@ const PackRip = ({ packTexture, cards = [] }: PackRipProps) => {
                 onRipComplete={handleRipComplete}
                 onOutroComplete={handleOutroComplete}
                 rotation={[0, -Math.PI / 2, 0]}
+                position={[0, -5, 0]}
                 textureUrl={packTexture}
               />
             )}

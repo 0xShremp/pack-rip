@@ -17,6 +17,7 @@ export interface PackProps {
   onIntroComplete?: () => void;
   onRipComplete?: () => void;
   onOutroComplete?: () => void;
+  position: [number, number, number];
   rotation: [number, number, number];
   textureUrl?: string;
 }
