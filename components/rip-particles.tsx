@@ -32,6 +32,7 @@ export function RipParticles({
 
   // Generate initial particle data once
   const initialData = useMemo(() => {
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     const rng = () => Math.random();
     const positions = new Float32Array(count * 3);
     const velocities: number[] = [];

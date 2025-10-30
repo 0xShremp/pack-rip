@@ -37,20 +37,9 @@ const PackRip = ({ packTexture, cards = [] }: PackRipProps) => {
     "loading" | "intro" | "ready" | "rip" | "ripping" | "outro" | "cards"
   >("loading");
   const [isLoaded, setIsLoaded] = useState(false);
-  const [loadedCount, setLoadedCount] = useState(0);
 
   // Calculate total images to load
   const totalImagesToLoad = (packTexture ? 1 : 0) + cards.length * 2;
-
-  // Debug log on mount
-  // console.log("PackRip mounted:", {
-  //   packTexture,
-  //   cardsCount: cards.length,
-  //   totalImagesToLoad,
-  //   state,
-  //   isLoaded,
-  //   loadedCount,
-  // });
 
   // Start intro animation after loading - using a callback approach to avoid cascading renders
   const handleLoadComplete = () => {
@@ -84,18 +73,15 @@ const PackRip = ({ packTexture, cards = [] }: PackRipProps) => {
 
       img.onload = () => {
         loaded++;
-        // console.log(`Loaded ${loaded}/${totalImagesToLoad}: ${src}`);
-        setLoadedCount(loaded);
         if (loaded >= totalImagesToLoad) {
           // console.log("All images loaded!");
           handleLoadComplete();
         }
       };
 
-      img.onerror = (error) => {
+      img.onerror = () => {
         loaded++;
         // console.error(`Failed to load image ${src}:`, error);
-        setLoadedCount(loaded);
         if (loaded >= totalImagesToLoad) {
           // console.log("All images processed (some may have failed)");
           handleLoadComplete();
